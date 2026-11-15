@@ -3,33 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhận Key GenPlay 835</title>
+    <title>Nhận Key TNTH VN</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #1e1e2f; color: #fff; text-align: center; padding: 50px; margin: 0; }
-        .box { background: #2a2a40; padding: 30px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 25px rgba(0,0,0,0.5); max-width: 400px; width: 90%; }
-        h1 { color: #00ffcc; font-size: 28px; margin-bottom: 20px; }
-        .key-container { background: #111; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px dashed #00ffcc; }
-        .key { font-size: 22px; font-weight: bold; color: #ffcc00; letter-spacing: 2px; word-break: break-all; }
-        .copy-btn { background: #00ffcc; color: #111; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
-        .copy-btn:hover { background: #00ccaa; }
-        .error { color: #ff5555; font-size: 18px; }
-        .success { color: #55ff55; font-size: 18px; }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0; 
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Hiệu ứng ánh sáng chạy nền */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.1) 0%, transparent 60%);
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .box { 
+            background: rgba(42, 42, 64, 0.8); 
+            backdrop-filter: blur(10px);
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(0, 255, 204, 0.2);
+            display: inline-block; 
+            max-width: 450px; 
+            width: 100%; 
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 { 
+            color: #00ffcc; 
+            font-size: 32px; 
+            margin-bottom: 10px; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.7), 0 0 20px rgba(0, 255, 204, 0.5);
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .key-container { 
+            background: #111; 
+            padding: 20px; 
+            border-radius: 12px; 
+            margin: 25px 0; 
+            border: 1px dashed #00ffcc; 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .key { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #ffcc00; 
+            letter-spacing: 3px; 
+            word-break: break-all; 
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .copy-btn { 
+            background: linear-gradient(90deg, #00ffcc, #00b386); 
+            color: #000; 
+            border: none; 
+            padding: 12px 30px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+        .copy-btn:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 204, 0.6);
+        }
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+        
+        .error { 
+            color: #ff5555; 
+            font-size: 18px; 
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 85, 85, 0.5);
+        }
+        
+        .success-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Hiệu ứng hạt rơi */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #00ffcc;
+            font-size: 1em;
+            opacity: 0.5;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
     </style>
 </head>
 <body>
+
     <div class="box">
-        <h1>🎮 GENPLAY 835</h1>
+        <h1>TNTH VN</h1>
+        <div class="subtitle">Hệ thống lấy Key tự động</div>
         <div id="content"><p>Đang kiểm tra...</p></div>
     </div>
 
     <script>
+        // Tạo hiệu ứng hạt rơi
+        function createSnow() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '✦';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            document.body.appendChild(snowflake);
+            setTimeout(() => { snowflake.remove(); }, 5000);
+        }
+        setInterval(createSnow, 300);
+
+        // Xử lý logic
         const token = new URLSearchParams(window.location.search).get('token');
         const contentDiv = document.getElementById('content');
 
         if (!token) {
             contentDiv.innerHTML = '<p class="error">❌ Lỗi: Không tìm thấy Token!</p>';
         } else {
-            // Tạo key ngẫu nhiên chuẩn TNTHVN-XXXX-YYYY
             function randomString(length) {
                 let result = '';
                 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -44,21 +182,27 @@
             const key = `TNTHVN-${part1}-${part2}`;
 
             contentDiv.innerHTML = `
-                <p class="success">✅ Vượt link thành công!</p>
-                <p>Dưới đây là Key của bạn:</p>
+                <div class="success-icon">🎉</div>
+                <p style="color: #55ff55; font-weight: bold; font-size: 18px;">Vượt link thành công!</p>
+                <p style="color: #ddd; font-size: 14px;">Dưới đây là Key của bạn:</p>
                 <div class="key-container">
                     <span class="key" id="keyText">${key}</span>
-                    <br>
-                    <button class="copy-btn" onclick="copyKey()">📋 Copy Key</button>
+                    <button class="copy-btn" onclick="copyKey()">📋 Copy Key Ngay</button>
                 </div>
-                <p style="font-size: 14px; color: #aaa;">Hãy quay lại Bot Telegram và nhập Key này vào.</p>
+                <p style="font-size: 13px; color: #888;">Hãy quay lại Bot Telegram và nhập Key này để nhận tiền.</p>
             `;
         }
 
         function copyKey() {
             const keyText = document.getElementById('keyText').innerText;
             navigator.clipboard.writeText(keyText).then(() => {
-                alert('✅ Đã copy Key! Hãy quay lại Telegram dán vào.');
+                const btn = document.querySelector('.copy-btn');
+                btn.innerHTML = '✅ Đã Copy!';
+                btn.style.background = 'linear-gradient(90deg, #55ff55, #00b386)';
+                setTimeout(() => {
+                    btn.innerHTML = '📋 Copy Key Ngay';
+                    btn.style.background = 'linear-gradient(90deg, #00ffcc, #00b386)';
+                }, 2000);
             }).catch(err => {
                 alert('Lỗi khi copy: ' + err);
             });
