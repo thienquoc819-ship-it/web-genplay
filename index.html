@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận Key GenPlay 835</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #1e1e2f; color: #fff; text-align: center; padding: 50px; }
+        .box { background: #2a2a40; padding: 30px; border-radius: 10px; display: inline-block; }
+        .key { font-size: 24px; font-weight: bold; color: #ffcc00; background: #111; padding: 10px; border-radius: 5px; margin-top: 20px; letter-spacing: 2px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🎮 GENPLAY 835</h1>
+        <div id="content"><p>Đang kiểm tra...</p></div>
+    </div>
+    <script>
+        const token = new URLSearchParams(window.location.search).get('token');
+        if (!token) {
+            document.getElementById('content').innerHTML = '<p style="color:red">❌ Lỗi: Không có Token!</p>';
+        } else {
+            let hash = 0;
+            for (let i = 0; i < token.length; i++) hash = token.charCodeAt(i) + ((hash << 5) - hash);
+            let key = "GENPLAY-" + Math.abs(hash).toString(16).toUpperCase().padStart(8, '0').substring(0,8);
+            document.getElementById('content').innerHTML = `<p style="color:#55ff55">✅ Vượt link thành công!</p><div class="key">${key}</div><p>Copy Key này quay lại Bot nhập nhé.</p>`;
+        }
+    </script>
+</body>
+  </html>
